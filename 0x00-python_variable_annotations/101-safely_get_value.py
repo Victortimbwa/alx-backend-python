@@ -1,15 +1,21 @@
 #!/usr/bin/env python3
 """
-duck_typing : more involved type annotations
+Duck Typing Module
 """
-from typing import Union, Any, Sequence
+from typing import Mapping, Any, TypeVar, Union
 
 
-def safely_get_value(dct: dict, key: Any, default: Union[Any, None]=None) -> Union[Any, None]:
+T = TypeVar('T')
+
+
+def safely_get_value(dct: Mapping, key: Any,
+                     default: Union[T, None] = None) -> Union[Any, T]:
     """
-    Annotate function parameters
+    Safely gets a value from a mapping
+    (dictionary-like_object
     """
     if key in dct:
         return dct[key]
     else:
         return default
+    
