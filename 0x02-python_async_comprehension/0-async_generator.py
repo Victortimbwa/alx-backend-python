@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
 """
-0. Async Generator
+0. Async Generator that yields 10 random numbers between 0 and 10
 """
+
 import random
 import asyncio
 
